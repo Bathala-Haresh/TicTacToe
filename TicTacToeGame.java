@@ -8,7 +8,7 @@ public class TicTacToeGame {
 		TicTacToeGame.emptyArray();
 
 	}
-	// method to create an empty array
+	// method to create an Empty Board
 	public static void emptyArray()
 	{
 		char [][] javaCharArray=new char[3][3];
