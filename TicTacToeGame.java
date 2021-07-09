@@ -1,11 +1,12 @@
 /**
- * If neither of us are winning then my first choice would be to take one of the avaliable corners
+ * My Subsequent Choices will be  If the corners are not available then take the Centre  Lastly any of the available
  *
  * @author  Bathala Haresh
  */
+
 package com.workshop;
 import java.util.Scanner;
-public class TicTacToeGameUC10
+public class TicTacToeGameUC11
 {
 	//method to choose your pawn like either X or O
 	public static char[] choosePawn(char[] x)
@@ -196,6 +197,28 @@ public class TicTacToeGameUC10
 		{
 			return 8;
 		}
+		if(x[4]=='*')
+		{
+			return 4;
+		}
+		if(x[1]=='*')
+		{
+			return 1;
+		}
+		if(x[3]=='*')
+		{
+			return 3;
+		}
+		if(x[5]=='*')
+		{
+			return 5;
+		}
+		if(x[7]=='*')
+		{
+			return 7;
+		}
+
+
 		return 100;
 	}
 	public static void main(String[] args) {
