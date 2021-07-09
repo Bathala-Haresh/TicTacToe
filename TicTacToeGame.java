@@ -1,13 +1,11 @@
 /**
- * Next thing I do is check if my Opponent can win then play to block it
+ * If neither of us are winning then my first choice would be to take one of the avaliable corners
  *
  * @author  Bathala Haresh
  */
-
 package com.workshop;
-
 import java.util.Scanner;
-public class TicTacToeGameUC9
+public class TicTacToeGameUC10
 {
 	//method to choose your pawn like either X or O
 	public static char[] choosePawn(char[] x)
@@ -116,10 +114,10 @@ public class TicTacToeGameUC9
 		}
 		return 0;
 	}
-	//method to autoplay by the computer 
+	//method to autoPlay by the computer 
 	public static int computerMove(char[] x,char y)
 	{
-		//for loop to check columns 
+		//for loop to check rows
 		for(int i=0;i<=2;i++)
 		{
 			if(x[i]==y&&x[i+3]==y&&x[i+6]=='*')
@@ -135,7 +133,7 @@ public class TicTacToeGameUC9
 				return i;
 			}
 		}
-		//for loop to check rows
+		//for loop to check coloumns
 		for(int i=0;i<=8;i++)
 		{
 			if(x[i]==y&&x[i+1]==y&&x[i+2]=='*')
@@ -152,7 +150,7 @@ public class TicTacToeGameUC9
 			}
 			i=i+2;
 		}
-		//for loop to check diagnols
+		//for loop to check Diagnols
 		if(x[0]==y&&x[4]==y&&x[8]=='*')
 		{
 			return 8;
@@ -176,6 +174,27 @@ public class TicTacToeGameUC9
 		if(x[2]==y&&x[6]==y&&x[4]=='*')
 		{
 			return 4;
+		}
+		return 100;
+	}
+	//method to check alternative moves
+	public static int alternateMove(char[] x)
+	{
+		if(x[0]=='*')
+		{
+			return 0;
+		}
+		if(x[2]=='*')
+		{
+			return 2;
+		}
+		if(x[6]=='*')
+		{
+			return 6;
+		}
+		if(x[8]=='*')
+		{
+			return 8;
 		}
 		return 100;
 	}
