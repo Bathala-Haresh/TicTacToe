@@ -1,12 +1,13 @@
 /**
- * On Computer getting its turn would like the computer to play like me
+ * Next thing I do is check if my Opponent can win then play to block it
  *
  * @author  Bathala Haresh
  */
+
 package com.workshop;
 
 import java.util.Scanner;
-public class TicTacToeGameUC8
+public class TicTacToeGameUC9
 {
 	//method to choose your pawn like either X or O
 	public static char[] choosePawn(char[] x)
@@ -57,7 +58,7 @@ public class TicTacToeGameUC8
 	{
 		return (int) ((Math.random() * (max - min)) + min);
 	}
-	//toss to choose who starts the game
+	//toss to choose who starts the game 
 	public static int toss(String x)
 	{
 		Scanner sc=new Scanner(System.in);
