@@ -1,14 +1,13 @@
 /**
- * As a player would play till the game is over
+ * Ability for the user to continue playing another Tic Tac Toe Games
  *
  * @author  Bathala Haresh
  */
 
-
 package com.workshop;
 import java.util.Scanner;
 
-public class TicTacToeGameUC12
+public class TicTacToeGameUC13
 {
 	//returns the random number between max and min
 	public static int getRandomNumber(int min, int max) 
@@ -237,7 +236,7 @@ public class TicTacToeGameUC12
 		{
 			if(current==1)
 			{
-				System.out.println("The Computer turn:");
+				System.out.println("The Computer turn : ");
 				//displaying the TicTacToe Board
 				showBoard(TicTac);
 				//checking the computerMove method like checking with all rows,coloumns and diagnols and assign 1 index to the step
@@ -262,7 +261,7 @@ public class TicTacToeGameUC12
 			}
 			else
 			{
-				System.out.println("The "+x+" turn");
+				System.out.println("The "+x+" turn : ");
 				showBoard(TicTac);
 				while(true)
 				{
@@ -279,7 +278,7 @@ public class TicTacToeGameUC12
 					}
 				}
 			}
-			
+
 			//checking the winning 
 			int win=rowWinCheck(TicTac,Pawns[current]);
 			if(win==0)
@@ -351,15 +350,30 @@ public class TicTacToeGameUC12
 
 	}
 	public static void main(String[] args) {
-	            Scanner sc=new Scanner(System.in);
-	            String player=new String();
-	            System.out.println("---Enter Player Name:");
-	            player=sc.nextLine();
-	            char [] Pawns=new char[2];
-	            int tosswon=toss(player);
-	            Pawns=choosePawn(Pawns);
-	            game(player,Pawns,tosswon);
-	            sc.close();
-	            
+		Scanner sc2=new Scanner(System.in);
+		while(true)
+		{
+			System.out.println("1.To Start new Game\n2.Exit");
+			int choice=sc2.nextInt();
+			switch(choice)
+			{
+			case 1:
+				Scanner sc=new Scanner(System.in);
+				String player=new String();
+				System.out.println("---Enter Player Name:");
+				player=sc.nextLine();
+				//array to store X OR O
+				char [] Pawns=new char[2];
+				int tosswon=toss(player);
+				Pawns=choosePawn(Pawns);
+				game(player,Pawns,tosswon);
+				break;
+			case 2:
+				System.exit(0);
+				break;
+			default:System.out.println("You Entered Wrong Choice");
+			break;
+			}
+		}
 	}
 }
