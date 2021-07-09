@@ -1,27 +1,29 @@
+/**
+* This program is to As a Player would like to start fresh by creating a tictactoe board 
+*
+* @author  Bathala Haresh
+*/
+
 package com.workshop;
-import java.util.Scanner;
-
-
-public class TicTacToeGame {
+public class TicTacToeGameUC1{
 
 	public static void main(String[] args) {
-		TicTacToeGame ticTacToeGame=new TicTacToeGame();
-		ticTacToeGame.emptyArray();
+		TicTacToeGameUC1.emptyArray();
 
 	}
-	// method to create an empty array
-	public void emptyArray()
+	
+	//method to create an empty array
+	public static  void emptyArray()
 	{
-		Scanner sc=new Scanner(System.in);
-		int step=1;
-		char [][] javaCharArray=new char[3][3];
+		char [][] Char=new char[3][3];
 
 		for(int i=0;i<=2;i++)
 		{
 			for(int j=0;j<=2;j++)
 			{
-				System.out.println(javaCharArray[i][j]+ " ");
+				System.out.println(Char[i][j]+ "  ");
 			}
+			System.out.print("\n");
 
 		}
 	}
