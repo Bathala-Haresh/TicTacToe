@@ -1,12 +1,12 @@
 /**
- * As player would expect the Tic Tac Toe App to determine after every move the winner or the tie or change the turn
+ * On Computer getting its turn would like the computer to play like me
  *
  * @author  Bathala Haresh
  */
 package com.workshop;
 
 import java.util.Scanner;
-public class TicTacToeGameUC7
+public class TicTacToeGameUC8
 {
 	//method to choose your pawn like either X or O
 	public static char[] choosePawn(char[] x)
@@ -89,7 +89,7 @@ public class TicTacToeGameUC7
 		}
 		return 100;
 	}
-	//method to check coloumn and char Y is {X,O}
+	//method to check columns and char Y is {X,O}
 	public static int columnWinCheck(char[] x,char y)
 	{
 		for(int i=0;i<=8;i++)
@@ -102,7 +102,7 @@ public class TicTacToeGameUC7
 		}
 		return 0;
 	}
-	//method to check diagnols 
+	//method to check Diagnols and char Y is {X,O}
 	public static int diagnolWinCheck(char[] x,char y)
 	{
 		if(x[0]==y&&x[4]==y&&x[8]==y)
@@ -114,6 +114,69 @@ public class TicTacToeGameUC7
 			return 1;
 		}
 		return 0;
+	}
+	//method to autoplay by the computer 
+	public static int computerMove(char[] x,char y)
+	{
+		//for loop to check columns 
+		for(int i=0;i<=2;i++)
+		{
+			if(x[i]==y&&x[i+3]==y&&x[i+6]=='*')
+			{
+				return i+6;
+			}
+			if(x[i]==y&&x[i+6]==y&&x[i+3]=='*')
+			{
+				return i+3;
+			}
+			if(x[i+3]==y&&x[i+6]==y&&x[i]=='*')
+			{
+				return i;
+			}
+		}
+		//for loop to check rows
+		for(int i=0;i<=8;i++)
+		{
+			if(x[i]==y&&x[i+1]==y&&x[i+2]=='*')
+			{
+				return i+2;
+			}
+			if(x[i]==y&&x[i+2]==y&&x[i+1]=='*')
+			{
+				return i+1;
+			}
+			if(x[i+2]==y&&x[i+1]==y&&x[i]=='*')
+			{
+				return i;
+			}
+			i=i+2;
+		}
+		//for loop to check diagnols
+		if(x[0]==y&&x[4]==y&&x[8]=='*')
+		{
+			return 8;
+		}
+		if(x[4]==y&&x[8]==y&&x[0]=='*')
+		{
+			return 0;
+		}
+		if(x[0]==y&&x[8]==y&&x[4]=='*')
+		{
+			return 4;
+		}
+		if(x[2]==y&&x[4]==y&&x[6]=='*')
+		{
+			return 6;
+		}
+		if(x[4]==y&&x[6]==y&&x[2]=='*')
+		{
+			return 2;
+		}
+		if(x[2]==y&&x[6]==y&&x[4]=='*')
+		{
+			return 4;
+		}
+		return 100;
 	}
 	public static void main(String[] args) {
 		char[] TicTac=new char[9];
