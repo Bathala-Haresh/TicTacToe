@@ -1,13 +1,14 @@
 /**
- * This program is ability to allow the player to choose letter X or O
+ * As a Player would like to see the board so I can choose the valid cells to make my move during my turn
  *
  * @author  Bathala Haresh
  */
+
 package com.workshop;
+
 import java.util.Scanner;
-public class TicTacToeGameUC2
+public class TicTacToeGameUC3
 {
-	//method which takes char array and choice by user and assigns the pawn
 	public static char[] choosePawn(char[] x,int choice)
 	{
 		if(choice==1)
@@ -25,19 +26,38 @@ public class TicTacToeGameUC2
 
 		return x;
 	}
-
-
+	//method to display the Board
+	public static void showBoard(char[] x)
+	{
+		for(int i=0;i<=8;i++)
+		{
+			System.out.print(x[i]+" ");
+			//we are starting from 0th index so we are incrementing it by 1
+			int a=i+1;
+			if(a%3==0)
+			{
+				System.out.print("\n");
+			}
+		}
+	}
 	public static void main(String[] args) {
-		//declaring character array of size 2
-		char [] pawns=new char[2];
-
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Choose the Pawn\n1.X\n2.O");
 		System.out.print("Your Pawn Choice:");
 		int choice=sc.nextInt();
-		sc.close();
+
+		//declaring an array
+		char[] TicTac=new char[9];
+		//filling board with stars
+		for(int i=0;i<=8;i++)
+		{
+			TicTac[i]='*';
+		}
+		//declaring an array
+		char [] pawns=new char[2];
+		//assigning TicTac to showBoard method
+		showBoard(TicTac);
 		pawns=choosePawn(pawns,choice);
-
-
+		sc.close();
 	}
 }
