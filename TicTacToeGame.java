@@ -1,14 +1,14 @@
 /**
- * Ability for user to make a move to a desired location in the board - Select the index from 1 to 9 to make the move. Ensure the index is free
+ * Ability to check for the free space before making the desired move 
  *
  * @author  Bathala Haresh
  */
 
 package com.workshop;
 import java.util.Scanner;
-public class TicTacToeGameUC4
+public class TicTacToeGameUC5
 {
-	//method to ask user  
+	//method to ask user to choose X or O
 	public static char[] choosePawn(char[] x)
 	{
 		Scanner sc=new Scanner(System.in);
